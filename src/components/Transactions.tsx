@@ -22,7 +22,7 @@ function Transactions() {
 
   useEffect(() => {
     const fetchTransaction = async () => {
-      const res = await fetch("src/utils/transaction.json");
+      const res = await fetch("/transaction.json");
       const result = await res.json();
       setTransaction(result);
     };
