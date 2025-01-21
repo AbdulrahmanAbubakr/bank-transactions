@@ -9,8 +9,16 @@ import {
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 
+interface transactionsData {
+  amount: string;
+  currency: string;
+  cardholder: string;
+  status: string;
+  created: string;
+}
+
 function Transactions() {
-  const [transaction, setTransaction] = useState([]);
+  const [transaction, setTransaction] = useState<transactionsData[]>([]);
 
   useEffect(() => {
     const fetchTransaction = async () => {
