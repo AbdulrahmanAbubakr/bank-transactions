@@ -1,8 +1,17 @@
 import { PinIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 
+interface CardData {
+  brand: string;
+  cvc: string;
+  last4: string;
+  cardholderName: string;
+  expiryMonth: number;
+  expiryYear: number;
+}
+
 function Card() {
-  const [cardData, setCardData] = useState(null);
+  const [cardData, setCardData] = useState<CardData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
